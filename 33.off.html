@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>off</title>
+</head>
+
+<body>
+    <button id="on">on</button>
+    <button id="off">off</button>
+
+    <button id="show">show</button>
+    <p id="show-text"></p>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        let index = 0;
+
+        // let show = function () {
+        //     // 改文字
+        //     $('#show-text').text("on" + index);
+        //     // INDEX+1
+        //     index++;
+        // };
+
+
+        // $('#on').on('click', function () {
+        //     //幫我綁定 show function 到 #show 身上
+        //     $('#show').on('click', show);
+        // })
+
+
+        // $('#off').on('click', function () {
+        //     //幫我解除綁定 show function 從 #show 身上
+        //     $('#show').off('click', show);
+        // })
+
+        let show = function () {
+            $('#show-text').text('index' + index);
+            index++;
+        };
+
+        $("#on").on('click', function () {
+            $('#show').on('click', show);
+        })
+
+
+        $("#off").on('click', function () {
+            $('#show').off('click', show);
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

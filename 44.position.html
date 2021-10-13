@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body {
+            margin: 100px 50px;
+        }
+
+        .wrap {
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+            margin: 10px 10px;
+            padding: 20px 20px;
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+            padding: 20px 20px;
+            margin: 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+        console.log('position:', $('.box').position());
+    </script>
+</body>
+
+</html>

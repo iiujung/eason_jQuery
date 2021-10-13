@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add class</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+
+        .link.active {
+            color: red;
+        }
+
+        .box.active {
+            background-color: #faf;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addClass">add Class</button>
+    <button id="removeClass">remove Class</button>
+    <button id="toggleClass">toggle Class</button>
+    <a class="link active">123</a>
+
+    <div class="box active">666</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('#addClass').on('click', function () {
+            $('.box').addClass('active');
+        })
+
+        $('#removeClass').on('click', function () {
+            $('.box').removeClass('active');
+        })
+
+        $('#toggleClass').on('click', function () {
+            $('.box').toggleClass('active');
+            console.log('hasclass:', $('.box').hasClass('active'))
+        })
+
+    </script>
+</body>
+
+</html>

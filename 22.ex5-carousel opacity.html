@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5 carousel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            /* overflow: hidden; */
+        }
+
+        .img-wrap {
+            left: 0;
+            transition: .5s;
+            /* width: 4000px; */
+            /* left: -1600px; */
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-wrap li {
+            /* flex-basis: 0;
+            flex-grow: 1; */
+
+            /* grow shirk basis */
+            /* flex: 1 0 0; */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+
+
+        }
+
+        li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .slider-dots {
+            bottom: 0;
+        }
+
+        .slider-dots li {
+            width: 40px;
+            height: 10px;
+            margin: 0 4px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap position-relative">
+        <ul class="img-wrap list-unstyled  position-absolute">
+
+
+            <li>
+                <img src="./imgs/slide1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/giraffe-5128394_1280.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/slide3.jpg" alt="">
+            </li>
+            <li><img src="./imgs/slide4.jpg" alt=""></li>
+            <li><img src="./imgs/slide5.jpg" alt=""></li>
+        </ul>
+
+        <ul class="position-absolute slider-dots list-unstyled d-flex justify-content-center w-100">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        let index = 0;
+
+        $('.slider-dots li').first().css('background', '#fff');
+        $('li img').css('opacity', '0');
+        $('li img').first().css('opacity', '1');
+
+        $('.slider-dots li').hover(function () {
+            console.log('hi', $(this).index());
+            $(this).css('background', '#fff').siblings().css('background', 'none');
+
+            // $('li img').css('opacity', '0');
+            $('li img').css('opacity', '0').eq($(this).index()).css('opacity', '1');
+
+
+
+        })
+
+        // setInterval(function () {
+        //     if (index > 4) {
+        //         index = 0;
+        //     }
+
+        //     $('.img-wrap').css('left', -800 * index);
+
+        //     $('.slider-dots li').eq(index).css('background', '#fff').siblings().css('background', 'none');
+
+
+        //     index = index + 1;
+        // }, 2000);
+    </script>
+</body>
+
+</html>

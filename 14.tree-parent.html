@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tree parent</title>
+    <style>
+        ul {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="item">
+        <li class="item">I</li>
+        <li class="item">II
+            <ul class="level-2">
+                <li class="item">item-a</li>
+                <li class="item-b">item-b
+                    <ul class="level-3">
+                        <li class="item-1">item1</li>
+                        <li class="item">item2</li>
+                        <a class="item item-3">item3</a>
+                    </ul>
+                </li>
+                <li class="item">item-c</li>
+            </ul>
+        </li>
+        <li class="item-iii">III</li>
+    </ul>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // $('li.item-1').parent().css('background', 'red');
+        // $('.item-3').closest()
+        // $('.item-3').closest('.item').css('color', 'red');
+
+        // $('li.item-1').parents('.level-2').css('color', 'red');
+
+        // $('li.item-1').parentsUntil('.level-2').css('color', 'red')
+    </script>
+</body>
+
+</html>
